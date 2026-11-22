@@ -123,6 +123,12 @@ export class Game {
 
   setMode(mode) {
     this.mode = mode;
+    this.#updateHud({
+      speed: this.player.speedMultiplier,
+      invuln: this.player.invulnerable,
+      mode: this.mode,
+      showHud: this.visuals.showHud,
+    });
   }
 
   applyFullSettings(s) {
