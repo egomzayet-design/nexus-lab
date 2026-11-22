@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Download NEXUS LAB — professional offline Windows sandbox control panel. Setup installer and portable EXE." />
+  <meta name="theme-color" content="#030503" />
+  <title>NEXUS LAB — Official Download</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Orbitron:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/site.css" />
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="NEXUS LAB home">
+      <span class="dot" aria-hidden="true"></span>
+      <span class="brand-text">NEXUS LAB</span>
+    </a>
+    <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="Primary">
+      <a href="#download">Download</a>
+      <a href="#features">Features</a>
+      <a href="#install">Install</a>
+      <a href="#security">Security</a>
+      <a class="nav-cta" href="#download">Get EXE</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <p class="eyebrow reveal">v2.0.0 · OFFLINE WINDOWS SANDBOX</p>
+      <h1 class="reveal">NEXUS LAB</h1>
+      <p class="lede reveal">
+        Professional offline sandbox control panel for owned Windows test environments.
+        Installer and portable builds — no third-party injection, no memory tampering, no anti-cheat interference.
+      </p>
+      <div class="hero-cta reveal">
+        <a class="btn btn-primary" id="btn-download-main" href="#download">Download Setup</a>
+        <a class="btn" href="#features">Explore Features</a>
+      </div>
+      <p class="hero-meta reveal">Windows 10 / 11 · x64 · HTTPS downloads · Sandbox only</p>
+    </section>
+
+    <section class="download" id="download">
+      <div class="section-head reveal">
+        <h2>Download</h2>
+        <p>Official Windows builds hosted via GitHub Releases.</p>
+      </div>
+
+      <div class="download-grid">
+        <article class="dl-card reveal" data-kind="setup">
+          <div class="dl-card-top">
+            <h3>Setup Installer</h3>
+            <span class="badge">Recommended</span>
+          </div>
+          <p class="dl-desc">Full installer with Start Menu and desktop shortcuts.</p>
+          <ul class="dl-meta">
+            <li><span>File</span><strong id="meta-setup-name">NEXUS_LAB_Setup.exe</strong></li>
+            <li><span>Version</span><strong id="meta-setup-version">2.0.0</strong></li>
+            <li><span>Size</span><strong id="meta-setup-size">—</strong></li>
+            <li><span>Supports</span><strong>Windows 10 / 11 (x64)</strong></li>
+          </ul>
+          <button type="button" class="btn btn-primary btn-block" id="dl-setup" data-file="setup">
+            <span class="btn-label">Download Setup</span>
+            <span class="btn-progress" hidden></span>
+          </button>
+          <p class="dl-status" id="status-setup" role="status" aria-live="polite"></p>
+        </article>
+
+        <article class="dl-card reveal" data-kind="portable">
+          <div class="dl-card-top">
+            <h3>Portable EXE</h3>
+            <span class="badge badge-muted">No install</span>
+          </div>
+          <p class="dl-desc">Single-file portable build. Run from any folder or USB drive.</p>
+          <ul class="dl-meta">
+            <li><span>File</span><strong id="meta-portable-name">NEXUS_LAB_Portable.exe</strong></li>
+            <li><span>Version</span><strong id="meta-portable-version">2.0.0</strong></li>
+            <li><span>Size</span><strong id="meta-portable-size">—</strong></li>
+            <li><span>Supports</span><strong>Windows 10 / 11 (x64)</strong></li>
+          </ul>
+          <button type="button" class="btn btn-block" id="dl-portable" data-file="portable">
+            <span class="btn-label">Download Portable</span>
+            <span class="btn-progress" hidden></span>
+          </button>
+          <p class="dl-status" id="status-portable" role="status" aria-live="polite"></p>
+        </article>
+      </div>
+
+      <p class="release-link reveal">
+        All assets:
+        <a id="releases-link" href="#" target="_blank" rel="noopener">GitHub Releases</a>
+      </p>
+    </section>
+
+    <section class="features" id="features">
+      <div class="section-head reveal">
+        <h2>Features</h2>
+        <p>Everything runs inside the included offline sandbox.</p>
+      </div>
+      <div class="feature-grid">
+        <article class="card reveal"><h3>Control Panel</h3><p>Draggable neon panel with FOV, hotkeys, profiles, visuals and live stats.</p></article>
+        <article class="card reveal"><h3>Aim Trainer</h3><p>Configurable sensitivity, target tracking and scoring — sandbox practice only.</p></article>
+        <article class="card reveal"><h3>ESP Visualizer</h3><p>Bounding boxes, distance and labels for isolated test dummies — never external games.</p></article>
+        <article class="card reveal"><h3>Platform Lab</h3><p>Speed / jump multipliers, checkpoint teleport and invulnerability for owned testing.</p></article>
+      </div>
+    </section>
+
+    <section class="install" id="install">
+      <div class="section-head reveal">
+        <h2>Install &amp; Launch</h2>
+      </div>
+      <ol class="steps reveal">
+        <li>Download <code>NEXUS_LAB_Setup.exe</code> or <code>NEXUS_LAB_Portable.exe</code> from this page.</li>
+        <li>For Setup: run the installer, choose a folder, finish — launch from Desktop or Start Menu.</li>
+        <li>For Portable: double-click the EXE anywhere; no installation step.</li>
+        <li>Press <kbd>`</kbd> or <kbd>F1</kbd> for the control panel. Use <kbd>1</kbd>/<kbd>2</kbd>/<kbd>3</kbd> to switch sandbox modes.</li>
+      </ol>
+    </section>
+
+    <section class="security" id="security">
+      <div class="section-head reveal">
+        <h2>Security Scope</h2>
+      </div>
+      <div class="security-box reveal">
+        <ul>
+          <li>Operates exclusively inside the owned offline NEXUS LAB sandbox.</li>
+          <li>Does not inject into third-party games or Rob Run.</li>
+          <li>Does not modify external game memory or bypass Easy Anti-Cheat.</li>
+          <li>Downloads are served over HTTPS from GitHub Releases.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>NEXUS LAB v2.0.0 · OFFLINE OWNED TEST ENVIRONMENT · NO EXTERNAL GAME ACCESS</p>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/site.js"></script>
+</body>
+</html>
