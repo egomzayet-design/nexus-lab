@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:;" />
+  <title>NEXUS LAB — Offline Sandbox</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/debug-menu.css" />
+</head>
+<body>
+  <div id="app">
+    <header class="game-chrome titlebar-drag">
+      <div class="brand">
+        <span class="brand-mark"></span>
+        <span class="brand-name">NEXUS LAB</span>
+        <span class="brand-version">v2.0</span>
+      </div>
+      <p class="hint">Offline sandbox · <kbd>`</kbd>/<kbd>F1</kbd> panel · <kbd>1</kbd>/<kbd>2</kbd>/<kbd>3</kbd> modes</p>
+      <div class="window-controls titlebar-no-drag">
+        <button type="button" class="win-btn" id="btn-min" aria-label="Minimize">─</button>
+        <button type="button" class="win-btn" id="btn-max" aria-label="Maximize">□</button>
+        <button type="button" class="win-btn win-close" id="btn-close" aria-label="Close">×</button>
+      </div>
+    </header>
+
+    <main class="stage">
+      <canvas id="game-canvas" width="1280" height="720" aria-label="NEXUS LAB offline sandbox canvas"></canvas>
+      <div id="hud" class="hud" aria-live="polite">
+        <span id="hud-mode">MODE PLATFORM</span>
+        <span id="hud-speed">SPD ×1.00</span>
+        <span id="hud-invuln" class="hud-off">INVULN OFF</span>
+      </div>
+    </main>
+
+    <div id="debug-root" class="debug-root" aria-hidden="true"></div>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

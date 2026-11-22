@@ -1,0 +1,48 @@
+name: Release Windows Builds
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate icons
+        run: npm run build:icons
+
+      - name: Build Windows installers
+        run: npm run dist
+
+      - name: Publish GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            release/NEXUS_LAB_Setup.exe
+            release/NEXUS_LAB_Portable.exe
+          body: |
+            ## NEXUS LAB ${{ github.ref_name }}
+
+            Offline Windows sandbox control panel.
+
+            ### Downloads
+            - **NEXUS_LAB_Setup.exe** — installer (Start Menu + desktop shortcut)
+            - **NEXUS_LAB_Portable.exe** — portable single EXE
+
+            ### Security
+            Sandbox-only. No third-party injection, memory access, or anti-cheat interference.
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

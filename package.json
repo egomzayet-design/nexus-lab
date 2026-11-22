@@ -1,0 +1,74 @@
+{
+  "name": "nexus-lab",
+  "productName": "NEXUS LAB",
+  "version": "2.0.0",
+  "description": "NEXUS LAB — professional offline sandbox control panel for owned test environments",
+  "author": "NEXUS LAB",
+  "license": "MIT",
+  "private": true,
+  "main": "electron/main.cjs",
+  "scripts": {
+    "start": "electron .",
+    "web": "npx --yes serve . -p 4173",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder --win",
+    "dist:setup": "electron-builder --win nsis",
+    "dist:portable": "electron-builder --win portable",
+    "build:icons": "node scripts/generate-icon.cjs"
+  },
+  "build": {
+    "appId": "com.nexuslab.sandbox",
+    "productName": "NEXUS LAB",
+    "copyright": "Copyright © NEXUS LAB",
+    "directories": {
+      "output": "release",
+      "buildResources": "build"
+    },
+    "files": [
+      "index.html",
+      "css/**/*",
+      "js/**/*",
+      "electron/**/*",
+      "build/icon.*"
+    ],
+    "extraResources": [
+      {
+        "from": "website",
+        "to": "website",
+        "filter": ["**/*"]
+      }
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64"]
+        },
+        {
+          "target": "portable",
+          "arch": ["x64"]
+        }
+      ],
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "NEXUS LAB",
+      "installerIcon": "build/icon.ico",
+      "uninstallerIcon": "build/icon.ico",
+      "artifactName": "NEXUS_LAB_Setup.${ext}"
+    },
+    "portable": {
+      "artifactName": "NEXUS_LAB_Portable.${ext}"
+    },
+    "publish": null
+  },
+  "devDependencies": {
+    "electron": "^33.2.1",
+    "electron-builder": "^25.1.8",
+    "pngjs": "^7.0.0"
+  }
+}
